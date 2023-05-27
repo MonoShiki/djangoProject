@@ -1,0 +1,16 @@
+{% block comments %}
+    <form method="post" style="width:200px">
+      {% csrf_token %}
+        <h2>Пользовательская оценка {{ score }}</h2>
+        <h3 style="flex-wrap:wrap">Ваша оценка: {{ user_score }}</h3>
+            <div class="flex-container" style="width: 150px; padding:5px;margin: 5px;">
+                {{ score_form.score }}
+                    <button class="button button_sm button_white media-rating-wrap__btn " name='user_score' type="submit" data-open-modal="#rating-modal">
+                        <span>
+                            <i class="fa fa-star-o"></i>
+                            Оценить
+                        </span>
+                    </button>
+            </div>
+    </form>
+{% endblock %}

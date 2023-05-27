@@ -1,0 +1,35 @@
+$main-color:#6237A0;
+$semi-color:#9754CB;
+$accent: "";
+$font-size: 1.8vw;
+$font-weight: 900;
+$textcolor:white;
+$lineheight:"";
+$userfont:"";
+$sysfont:"huuiS";
+$bg-color: #c16bf5;
+
+html{
+  position: relative;
+  min-height: 100%;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background: rgba(195, 192, 201, 0.3) 50%;
+  margin: 0 0 50px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+{% block filter %}
+
+    <form method="GET" style="overflow: auto;">
+      {% csrf_token %}
+        <ul>
+            <li><h2>Жанр</h2>
+                {{ form.genres }}</li>
+        </ul>
+    <button class="button button_sm button_white media-rating-wrap__btn " name='filter' type="submit" data-open-modal="#rating-modal">
+                        <span>
+                            <i class="fa fa-star-o"></i>
+                            Выбрать
+                        </span>
+                    </button>
+    </form>
+{% endblock %}

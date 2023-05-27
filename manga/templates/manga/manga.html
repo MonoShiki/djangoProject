@@ -1,0 +1,35 @@
+{% extends "manga/layout.html" %}
+{% load static %}
+{% block title %}{{ object.full_title }}{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "manga/css/manga_index.css" %}">
+{% endblock %}
+{% block content %}
+    {% include "main/navpanel.html"%}
+    <section class="mysect">
+        <div class="manga row">
+            <div class="left_block col-sm">
+            <img src="{{ object.image.url }}" alt="{{ object.title }}" style="z-index: 5">
+             {% include "main/score.html" %}
+        </div>
+            <div class="right_block col-sm">
+                 <h1>{{ object.title }}</h1>
+                 <h2>{{ object.full_title }}</h2>
+                 <p>{{ object.description }}</p>
+                 <p>Жанры:
+                     {% for genre in genres %}
+                         <i class="genre">{{ genre }}</i>
+                     {% endfor %}
+                 </p>
+                <p>Автор: {{ object.author }}</p>
+        </div>
+        </div>
+    </section>
+    <section  class="comments">
+
+    {% include "main/create_comment.html" %}
+    </section>
+    {% include "main/footer.html" %}
+{% endblock %}
+
+

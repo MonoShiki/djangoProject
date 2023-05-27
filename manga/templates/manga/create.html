@@ -1,0 +1,51 @@
+{% extends "manga/layout.html" %}
+{% load static %}
+{% block title %}Аниме фан{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "manga/css/manga_index.css" %}">
+{% endblock %}
+{% block content %}
+    {% include "main/navpanel.html"%}
+    <section class="form">
+        <div class="feauters">
+            <h1>Форма для добавления манги</h1>
+            <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.title.label_tag }}
+                    {{ form.title }}
+                </div>
+                <div class="form-group">
+                    {{ form.full_title.label_tag }}
+                    {{ form.full_title }}
+                </div>
+                <div class="form-group">
+                    {{ form.image.label_tag }}
+                    {{ form.image }}
+                </div>
+                <div class="form-group">
+                    {{ form.description.label_tag }}
+                    {{ form.description }}
+                </div>
+                 <div class="form-group">
+                    {{ form.author.label_tag }}
+                    {{ form.author }}
+                 </div>
+                 <div class="form-group">
+                    {{ form.genres.label_tag }}
+                    {{ form.genres }}
+                 </div>
+                <span>{{ err }}</span>
+                <div style="display: flex; flex-direction: row;justify-content: space-between; width: 100%;">
+                    <button class="btn btn-success" type="submit">Добавить мангу</button>
+                    <a href="{% url 'author_create' %}" style="text-decoration: none;
+                    border: #007bff solid 10px; border-radius: 10px;color:white;background: #007bff;padding:3px;">Добавить автора</a>
+
+                </div>
+            </form>
+        </div>
+    </section>
+    {% include "main/footer.html" %}
+{% endblock %}
+
+

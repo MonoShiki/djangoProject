@@ -1,0 +1,22 @@
+{% extends "manga/layout.html" %}
+{% load static %}
+{% block title %}Аниме фан{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "manga/css/manga_index.css" %}">
+{% endblock %}
+{% block content %}
+    {% include "main/navpanel.html"%}
+    <section class="form">
+        <div class="feauters">
+            <h1>Форма для Изменения манги</h1>
+                    <form enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                            {{ form.as_p }}
+                        <input type="submit" value="Сохранить">
+                    </form>
+        </div>
+    </section>
+    {% include "main/footer.html" %}
+{% endblock %}
+
+

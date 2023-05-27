@@ -1,0 +1,38 @@
+@import "manga.css";
+@import "form.css";
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background: rgba(195, 192, 201, 0.3) 50%;
+  margin: 0 0 50px;
+}
+
+section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.pagination {
+  justify-content: center !important;
+}
+
+/*# sourceMappingURL=index.css.map */

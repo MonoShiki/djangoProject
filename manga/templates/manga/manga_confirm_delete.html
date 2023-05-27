@@ -1,0 +1,20 @@
+{% extends "manga/layout.html" %}
+{% load static %}
+{% block title %}Аниме фан{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "manga/css/manga_index.css" %}">
+{% endblock %}
+{% block content %}
+    <section>
+            <h1>Удалить мангу "{{ object }}"</h1>
+              <p>Вы уверены, что хотите удалить эту мангу?</p>
+                  <form method="post">
+                    csrf_token %}
+                    <input type="submit" value="Удалить">
+                    <a href="{% url 'manga_detail' object.pk %}">Отмена</a>
+                  </form>
+    </section>
+    {% include "main/create_comment.html" %}
+    {% include "main/footer.html" %}
+{% endblock %}
+

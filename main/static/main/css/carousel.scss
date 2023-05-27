@@ -1,0 +1,70 @@
+@import "main";
+
+.popular-title{
+  height: 100%;
+  text-align: center;
+  vertical-align: center;
+  color:$main-color;
+  font-size:$font-size ;
+  font-weight: $font-weight;
+  margin-top:10px
+}
+
+.wrapper {
+  margin-top: 10px;
+  margin-bottom: 100px !important;
+  height: 500px;
+  padding: 30px;
+  display: flex;
+}
+
+.carousel {
+    color:$main-color;
+    width: 80%;
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-overflow: ellipsis;
+    font-weight: $font-weight;
+    .slick-slide {
+      padding:5px;
+      height: 100%;
+      overflow-wrap: break-word;
+      text-align: center;
+      img {
+        display: unset !important;
+        width: 200px;
+        height: 290px;
+
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      margin: -30px 0px 0px 0px;
+      z-index: 10;
+      width: 15px;
+      height: 30px;}
+
+      .slick-arrow.slick-disabled {
+        opacity: 0.8;
+      }
+
+    }
+  .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+
+  .slick-prev.slick-arrow {
+    background: url("../imgs/a_left.svg") 0 0 / 100% no-repeat !important;
+    left: 0;
+  }
+
+  .slick-arrow.slick-next {
+    background: url("../imgs/a_right.svg") 0 0 / 100% no-repeat !important;
+    right: 0;
+  }
+  .slick-next:before,.slick-prev:before{ content:none !important;}

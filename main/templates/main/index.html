@@ -1,0 +1,20 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Аниманга{% endblock %}
+{% block content %}
+    {% include "main/navpanel.html"%}
+    <section class="site-banner">
+        <div>
+            <div class="text-center casual-text">
+                <h1>Welcome to Animanga</h1>
+                <p><span>Discover manga, </span><span>track your progress, </span><span>read manga.</span></p>
+            </div>
+        </div>
+    </section>
+    {% include "main/carousel.html" %}
+    {% include "main/footer.html" %}
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static "main/js/smth.js" %}"></script>
+{% endblock %}
+

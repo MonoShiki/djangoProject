@@ -1,0 +1,120 @@
+@import "main";
+nav {
+  z-index: 15;
+  position: sticky;
+  top:0;
+  text-align: center;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  background: #FFFF;
+  a {
+    text-decoration: none;
+    color: $main-color;
+    transition: transform 0.3s ease;
+    padding:4px;
+  }
+
+  .logo{
+    color:#28104E;
+    margin-left: 20px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 10px;
+    }
+
+    .regist {
+      border: 5px solid $semi-color;
+      border-radius: 10px;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, $semi-color 0%, $main-color 100%);
+      background-size: 200% 200%;
+      transition: 0.5s;
+      color: white;
+    }
+
+    .regist:hover {
+      background-position: right center;
+      transform: scale(1.1);
+      filter: blur(1px);
+      box-shadow: #6237A0;
+    }
+  }
+  a .nlink{
+      text-decoration: none;
+      color: $main-color;
+      transition: transform 0.3s ease;
+    }
+
+  a .nlink:hover {
+    text-decoration-line: none;
+    transform: scale(1.1);
+  }
+
+  .pure-g {
+    display: flex;
+    flex-wrap: nowrap;
+    border: 10px solid #c16bf5;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  li:first-child {
+    margin-left: 10px;
+  }
+
+  li:last-child {
+    margin-right: 10px;
+  }
+}
+
+@keyframes border-animate {
+  0% {
+    border-color: purple;
+    background-color: purple;
+  }
+  50% {
+    border-color: #6237A0;
+    background-color: #6237A0;
+  }
+  100% {
+    border-color: #28104E;
+    background-color: #28104E;
+  }
+}
+
+#dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  margin:0;
+}
+nav ul li.dropdown{
+  margin:0;
+  padding:0;
+}
+nav ul li.dropdown:hover > ul.dropdown-menu {
+  display: block;
+}
+
+nav ul li.dropdown > ul.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+nav ul li.dropdown > ul.dropdown-menu li {
+  display: block;
+}

@@ -1,0 +1,31 @@
+{% load static %}
+
+    <section class="wrapper" style="flex-wrap:wrap;">
+        <div class="carousel">
+                {% for object in objects %}
+                  <div class="item">
+                        <a href="{% url 'manga-detail' object.id %}">
+                            {% if object.get_num_score >= 7 %}
+                                <h1 style="padding-left:5px;position:absolute;z-index:11;background-color:#17d602;color:rgb(255,255,255);">{{object.display_score}}</h1>
+                            {% elif object.get_num_score >= 4 %}
+                                <h1 style="padding-left:5px;position:absolute;z-index:11;background-color:#c6c90a;color:rgb(255,255,255);">{{object.display_score}}</h1>
+                            {% else %}
+                                <h1 style="padding-left:5px;position:absolute;z-index:11;background-color:#e32f02;color:rgb(255,255,255);">{{object.display_score}}</h1>
+                            {% endif %}
+                            <img src="{{ object.image.url }}" alt="{{ object.title }}" style="z-index: 5">
+                        </a>
+                        <h4>{{ object.title }}</h4>
+                        <p>{{ object.last_update }}</p>
+                  </div>
+                {% endfor %}
+        </div>
+        <div class="popular-title">Read on Animanga</div>
+    </section>
+    {% block scripts %}
+        <script type="text/javascript" src="{% static "main/js/smth.js" %}"></script>
+    {% endblock %}
+        </div>
+
+
+
+

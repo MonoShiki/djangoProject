@@ -1,0 +1,19 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Аниме фан{% endblock %}
+{% block content %}
+    {% include "main/navpanel.html"%}
+    <section class="mysect">
+          <div class="form" style="width: 500px;padding: 30px">
+              <h2>Sign in</h2>
+              <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                <button type="submit">Sign in</button>
+              </form>
+          </div>
+    </section>
+    {% include "main/footer.html" %}
+{% endblock %}
+
+

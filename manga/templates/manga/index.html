@@ -1,0 +1,48 @@
+{% extends "manga/layout.html" %}
+{% load static %}
+{% block title %}Аниме фан{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "manga/css/index.css" %}">
+{% endblock %}
+{% block content %}
+    {% include "main/navpanel.html"%}
+    <section class="mysect">
+        <div class="left_corner">
+            <div class="manga-grid">
+            {% for object in objects %}
+                  <div class="item-card">
+                        <a href="{% url 'manga-detail' object.id %}" style="background-image:url('{{ object.image.url }}');">
+                            {% if object.get_num_score >= 7 %}
+                                <h1 style="padding-left:5px;position:absolute;z-index:11;background-color:#17d602;color:rgb(255,255,255);">{{object.display_score}}</h1>
+                            {% elif object.get_num_score >= 4 %}
+                                <h1 style="padding-left:5px;position:absolute;z-index:11;background-color:#c6c90a;color:rgb(255,255,255);">{{object.display_score}}</h1>
+                            {% else %}
+                                <h1 style="padding-left:5px;position:absolute;z-index:11;background-color:#e32f02;color:rgb(255,255,255);">{{object.display_score}}</h1>
+                            {% endif %}
+
+                            <div class="manga_caption">
+                                <h5>Манга</h5>
+                                <h3>{{ object.title }}</h3>
+                            </div>
+                        </a>
+                    <div class="staff">
+                        {% if user.is_staff %}
+                            <a href="{% url 'manga_delete' object.id %}" style="border-color:#fa2b2b;background-color:#fa2b2b">Удалить</a>
+                            <a href="{% url 'manga_update' object.id %}" target="_blank" style="border-color:#7373ef;background-color:#7373ef">Редактировать</a>
+                        {% endif %}
+                </div>
+                  </div>
+                {% endfor %}
+        </div>
+        </div>
+            <div class="right_corner">
+                <div class="filters">
+                    <h1>Фильтры</h1>
+                {% include 'main/filter.html' %}
+                </div>
+            </div>
+    </section>
+    {% include "main/footer.html" %}
+{% endblock %}
+
+

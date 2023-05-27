@@ -1,0 +1,35 @@
+<nav class="nav">
+            <a class="logo" href="{% url 'home' %}"> <strong style="text-align: center">Animanga</strong></a>
+            <ul class="nav__list">
+                <li class="nav__item dropdown">
+                    {% if user.is_staff %}
+                        <a class="nlink" href="{% url "manga_home" %}">Manga</a>
+                            <ul class="dropdown-menu" style="width: 200px;">
+                                    <li><a href="{% url "manga_create" %}"> Добавить мангу</a></li>
+                                    <li><a href="{% url "author_create" %}"> Добавить автора</a></li>
+                                    <li><a href="{% url "genre_create" %}"> Добавить жанр</a></li>
+                            </ul>
+                    {% else %}
+                        <a class="nlink" href="{% url "manga_home" %}">Manga</a>
+                    {% endif %}
+
+                </li>
+            </ul>
+            <ul>
+                {% if user.is_authenticated %}
+                <li class="nav__item">
+                    <a href="{% url 'profile' %}">{{ user }}</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{% url 'logout' %}">Sign out</a>
+                </li>
+                {% else %}
+                <li class="nav__item">
+                    <a class="Log_in" href="{% url 'sign_in' %}" style="visibility: visible"> Sign in </a>
+                </li>
+                <li class="nav__item">
+                    <a class="regist" href="{% url 'register' %}" style="visibility: visible"> Get started </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>

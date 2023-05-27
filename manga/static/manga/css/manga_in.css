@@ -1,0 +1,66 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background: rgba(195, 192, 201, 0.3) 50%;
+  margin: 0 0 50px;
+}
+
+.mysect {
+  margin-top: 35px;
+  font-weight: 900;
+  font-size: 1.8vw;
+  min-height: 100%;
+  position: relative !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.mysect .manga {
+  padding: 10px;
+  position: relative;
+  background: #FFF;
+  border: 5px solid #FFFFFF;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+}
+.mysect .manga .left_block img {
+  width: 200px;
+  height: 300px;
+}
+.mysect .manga .right_block .genre {
+  border: 2px solid #eac3fd;
+  background: #eac3fd;
+}
+
+textarea {
+  height: 50px;
+  width: 150px;
+}
+
+.comments {
+  margin-bottom: 100px;
+}
+
+.user_comment {
+  margin-top: 10px;
+  background: #FFF;
+  border: 5px solid #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=manga_in.css.map */

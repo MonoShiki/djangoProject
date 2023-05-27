@@ -1,0 +1,18 @@
+{% extends 'manga/layout.html' %}
+{% load static %}
+{% block title %}Аниме фан{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "manga/css/index.css" %}">
+{% endblock %}
+{% block content %}
+    {% include "main/navpanel.html"%}
+    <section class="mysect" style="display: flex;flex-direction: column;justify-content: center;">
+        <h2>Редактировать комментарий</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Сохранить</button>
+  </form>
+    </section>
+    {% include "main/footer.html" %}
+{% endblock %}

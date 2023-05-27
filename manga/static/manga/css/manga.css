@@ -1,0 +1,110 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background: rgba(195, 192, 201, 0.3) 50%;
+  margin: 0 0 50px;
+}
+
+.mysect {
+  margin-top: 35px;
+  font-weight: 900;
+  font-size: 1.8vw;
+  position: relative !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start !important;
+  margin-bottom: 120px;
+}
+.mysect .right_corner {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  flex: 0.3;
+  vertical-align: top;
+}
+.mysect .right_corner .filters {
+  width: 90%;
+  margin-right: 50px;
+  background: #FFF;
+  border: 3px solid #FFFFFF;
+  border-radius: 10px;
+  text-wrap: avoid;
+  padding: 8px;
+}
+.mysect .left_corner {
+  flex: 0.8;
+  flex-wrap: wrap;
+  padding-right: 20px;
+}
+.mysect .left_corner .manga-grid {
+  background: #FFF;
+  border: 5px solid #FFFFFF;
+  border-radius: 20px;
+  height: 100%;
+  padding: 2%;
+  display: flex;
+  color: #6237A0;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-overflow: ellipsis;
+  font-weight: 900;
+  flex-wrap: wrap;
+  margin-right: 100px;
+  margin-left: 40px;
+}
+.mysect .left_corner .manga-grid .item-card {
+  flex-wrap: wrap;
+  padding: 5px;
+  height: 300px;
+  width: 200px;
+  overflow-wrap: break-word;
+  text-align: center;
+  display: flex;
+}
+.mysect .left_corner .manga-grid .item-card .staff {
+  height: 10%;
+  display: flex;
+  font-weight: 10;
+  width: 100%;
+}
+.mysect .left_corner .manga-grid .item-card .staff a {
+  flex-direction: row;
+  padding: 2px;
+  font-size: 16px;
+}
+.mysect .left_corner .manga-grid .item-card a {
+  position: relative;
+  display: block;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: 50%;
+  cursor: pointer;
+  width: 100%;
+  height: 90%;
+  text-decoration: none;
+  color: #ffffff;
+}
+.mysect .left_corner .manga-grid .item-card a .manga_caption {
+  padding-left: 5px;
+  text-shadow: 2px 3px 3px #120031;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/*# sourceMappingURL=manga.css.map */

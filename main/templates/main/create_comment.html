@@ -1,0 +1,61 @@
+{% block comments %}
+    <div class="user_comment" style="width: 38%;margin-left:2%;justify-content: center">
+        <form method="post" style="overflow: auto;">
+  {% csrf_token %}
+    <div class="form-group" style="width: 100%">
+            {{ comment_form.text.label_tag }}
+            {{ comment_form.text }}
+    </div>
+    <button name='comment' type="submit">Submit</button>
+  </form>
+    </div>
+    <h2>Comments</h2>
+    <ul style="width: 40%">
+    <div class="pagination" style="justify-content: center">
+                        <span class="step-links">
+                            {% if comments.has_previous %}
+                                <a href="?page=1">&laquo; first</a>
+                                <a href="?page={{ comments.previous_page_number }}">previous</a>
+                            {% endif %}
+
+                            <span class="current-page">
+                                Page {{ comments.number }} of {{ comments.paginator.num_pages }}.
+                            </span>
+
+                            {% if comments.has_next %}
+                                <a href="?page={{ comments.next_page_number }}">next</a>
+                                <a href="?page={{ comments.paginator.num_pages }}">last &raquo;</a>
+                            {% endif %}
+                        </span>
+                </div>
+    {% for comment in comments %}
+      <li style="list-style: none;">
+          <div class="user_comment" style="display: flex;width: 100%">
+                  <div class="left" style="flex-direction: column;width: 100%">
+                          <img style="height: 120px;width: 120px;" src="{{ comment.user.profile.image.url }}">
+                          <p style="text-wrap: normal">
+                              {{ comment.user.username }}
+                              <br>
+                              {{ comment.created_at }}
+                          </p>
+                    </div>
+                  <div class="right" style="width: 100%">
+                        {{ comment.text }}
+                  </div>
+          </div>
+            {% if user.is_staff or user == comment.user %}
+            <div class="staff" style="width: 100%;margin-bottom:20px;text-align: center;color:#FFFF; display: flex;flex-direction: row;">
+                    <form method="post" style="flex:0.5" action="{% url 'delete_comment' comment_id=comment.id%}">
+                            {% csrf_token %}
+                            <button style="border-color:#fa2b2b;background-color:#fa2b2b;width: 100%;border-radius:20px;" name="delete_comment" type="submit">Удалить</button>
+                    </form>
+                    <a href="{% url 'edit_comment' comment.id %}" style="border-color:#7373ef;background-color:#7373ef;border-radius:20px;text-align: center;color:#FFFF;text-decoration: none; padding-top:10px;flex:0.5;">Редактировать</a>
+                {% endif %}
+            </div>
+           </li>
+    {% empty %}
+      <li>No comments yet.</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+@import "main";
+
+.mysect{
+  margin-top:35px ;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  position: relative !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start !important;
+  margin-bottom:120px;
+  .right_corner{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    flex: 0.3;
+    vertical-align: top;
+    .filters{
+      width: 90%;
+      margin-right: 50px;
+      background: #FFF;
+      border:3px solid #FFFFFF;
+      border-radius: 10px;
+      text-wrap: avoid;
+      padding:8px;
+
+    }
+  }
+
+  .left_corner{
+    flex: 0.8;
+    flex-wrap:wrap;
+    padding-right: 20px;
+    .manga-grid {
+      background: #FFF;
+      border:5px solid #FFFFFF;
+      border-radius: 20px;
+      height: 100%;
+      padding:2%;
+      display: flex;
+      color:$main-color;
+      flex-direction: row;
+      justify-content: flex-start;
+      text-overflow: ellipsis;
+      font-weight: $font-weight;
+      flex-wrap: wrap;
+      margin-right: 100px;
+      margin-left:40px;
+      .item-card {
+        flex-wrap: wrap;
+        padding:5px;
+        height: 300px;
+        width: 200px;
+        overflow-wrap: break-word;
+        text-align: center;
+        display: flex;
+        .staff{
+          height: 10%;
+          display: flex;
+          font-weight: 10;
+          width: 100%;
+          a{
+            flex-direction: row;
+            padding: 2px;
+            font-size: 16px;
+          }
+        }
+        a {
+          position: relative;
+          display: block;
+          padding:5px;
+          border-radius: 4px;
+          background-color: rgba(0, 0,0, 0.3);
+          background-blend-mode: multiply;
+          background-size: cover;
+          background-position: 50%;
+          cursor: pointer;
+          width: 100%;
+          height: 90%;
+          text-decoration: none;
+          color: #ffffff;
+          .manga_caption{
+            padding-left:5px;
+            text-shadow: 2px 3px 3px #120031;
+            text-align: left;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+          }
+
+      }
+    }
+  }
+  }
+}
