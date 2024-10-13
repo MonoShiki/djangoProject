@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-#wfc1&9*1)a)sm-m-e7#(30__0%rtjtep0k2@bp-tf47#&#zue
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
- 
+
 ALLOWED_HOSTS = ['djangoproject-gvn3.onrender.com', 'localhost', '127.0.0.1']
 
- 
+
 MEDIA_ROOT = "media"
 MEDIA_URL = ''
 
@@ -84,7 +84,14 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
+    'default': dj_database_url.parse('postgresql://tetsuya:AsyVI0FKqHCzFwS4zD8RPDyWt6EW58fO@dpg-cs5uvvg8fa8c73ar6tg0-a.oregon-postgres.render.com/shika')
+}
+
+
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'shika',
@@ -93,7 +100,7 @@ DATABASES = {
         'HOST': 'dpg-cs5uvvg8fa8c73ar6tg0-a',
         'PORT': '5432',
     }
-}
+}"""
 
 
 # Password validation
@@ -113,6 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization
