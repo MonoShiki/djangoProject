@@ -89,8 +89,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'shika',
         'USER': 'tetsuya',
-        'PASSWORD': 'tetsuya',
-        'HOST': 'localhost',
+        'PASSWORD': 'AsyVI0FKqHCzFwS4zD8RPDyWt6EW58fO',
+        'HOST': 'dpg-cs5uvvg8fa8c73ar6tg0-a',
         'PORT': '5432',
     }
 }
