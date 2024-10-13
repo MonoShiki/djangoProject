@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("manga/",include("manga.urls")),
     path("account/",include("c_auth.urls")),
+    path("accounts/",include("c_auth.urls")),
     path("", include("main.urls")),
     ] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 
