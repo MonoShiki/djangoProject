@@ -14,20 +14,22 @@
 
 </head>
 <body>
-<script>(function(d,s){d.getElementById("licntA800").src=
-    "https://counter.yadro.ru/hit?t52.6;r"+escape(d.referrer)+
-    ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
-    (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
-    ";h"+escape(d.title.substring(0,150))+";"+Math.random()})
-    (document,screen)</script><!--/LiveInternet-->
+<!--LiveInternet counter--><script>
+new Image().src = "https://counter.yadro.ru/hit?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,150))+
+";"+Math.random();</script><!--/LiveInternet-->
+
 
     {% block content %}
 
     {% endblock %}
-        <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
-    target="_blank"><img id="licntA800" width="88" height="31" style="border:0" 
-    title="LiveInternet: number of pageviews and visitors for 24 hours is shown"
-    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
-    alt=""/></a>
+    <!--LiveInternet logo--><a href="https://www.liveinternet.ru/click"
+    target="_blank"><img src="https://counter.yadro.ru/logo?14.6"
+    title="LiveInternet: number of pageviews for 24 hours, of visitors for 24 hours and for today is shown"
+    alt="" style="border:0" width="88" height="31"/></a><!--/LiveInternet-->
+
 </body>
 </html>
