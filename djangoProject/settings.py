@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://tetsuya:AsyVI0FKqHCzFwS4zD8RPDyWt6EW58fO@dpg-cs5uvvg8fa8c73ar6tg0-a/shika')
+    'default': dj_database_url.parse('postgresql://tetsuya:rgSx8LgWubQD9Mn9dJTugxJrJ9oQ3Dtu@dpg-csr4bit2ng1s73f5lugg-a/shika_o2ej')
 }
 
 
