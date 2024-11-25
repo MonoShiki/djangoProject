@@ -102,15 +102,14 @@ class MangaDetailView(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
-        if str(request.user) != "AnonymousUser":
-            if 'comment' in request.POST:
+        if 'comment' in request.POST:
                 form = CommentForm(request.POST)
                 if form.is_valid():
                     comment = form.save(commit=False)
                     comment.user = request.user
                     comment.manga = self.get_object()
                     comment.save()
-
+        if str(request.user) != "AnonymousUser":
             if 'user_score' in request.POST:
                 form = ScoreForm(request.POST)
                 if form.is_valid():
