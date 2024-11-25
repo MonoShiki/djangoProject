@@ -42,7 +42,7 @@ def create(request):
     return render(request, 'manga/create.html', data)
 
 
-@login_required()
+#@login_required()
 def create_author(request):
     err = ""
     if request.method == "POST":
