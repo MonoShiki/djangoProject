@@ -1,14 +1,20 @@
+import re
+from django.http import HttpResponseForbidden
 from django.utils.deprecation import MiddlewareMixin
 
 class CustomXFrameOptionsMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
-        allowed_domains = ['example.com', 'another-example.com']
+        # Регулярное выражение для разрешенных доменов
+        allowed_domains = re.compile(r'^https?:\/\/([^\/]+\.)?(yourdomain\.com|webvisor\.com|metri[ck]a\.yandex\.(com|ru|by|com\.tr))\/')
+
+        # Получаем домен из заголовка Referer
         referer = request.META.get('HTTP_REFERER', '')
 
-        # Проверяем, если реферер соответствует одному из разрешенных доменов
-        if any(domain in referer for domain in allowed_domains):
-            response['X-Frame-Options'] = 'ALLOW-FROM {}'.format(referer)
+        # Если реферер не пустой и соответствует регулярному выражению, разрешаем встраивание
+        if referer and allowed_domains.match(referer):
+            response['X-Frame-Options'] = 'ALLOW-FROM ' + referer
         else:
+            # Иначе ограничиваем встраивание
             response['X-Frame-Options'] = 'DENY'
 
         return response
