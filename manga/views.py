@@ -106,7 +106,7 @@ class MangaDetailView(DetailView):
                 form = CommentForm(request.POST)
                 if form.is_valid():
                     comment = form.save(commit=False)
-                    comment.user = request.user
+                    comment.user = 1
                     comment.manga = self.get_object()
                     comment.save()
         if str(request.user) != "AnonymousUser":
