@@ -31,7 +31,7 @@ class Type(models.Model):
 class Manga(models.Model):
     title = models.CharField('Название', max_length=50)
     full_title = models.CharField("Полное название", max_length=250)
-    image = models.ImageField("Изображение", upload_to='../media/images/', default="../media/images//dnote.jpg")
+    image = models.ImageField("Изображение", upload_to='images/', default="images/dnote.jpg")
     description = models.TextField("Описание")
     last_update = models.DateField('Дата последней загрузки', default=timezone.now)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, default='')
