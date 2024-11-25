@@ -5,7 +5,7 @@ from django.utils.deprecation import MiddlewareMixin
 class CustomXFrameOptionsMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
         # Регулярное выражение для разрешенных доменов
-        allowed_domains = re.compile(r'^https?:\/\/([^\/]+\.)?(yourdomain\.com|webvisor\.com|metri[ck]a\.yandex\.(com|ru|by|com\.tr))\/')
+        allowed_domains = re.compile(r'^https?:\/\/([^\/]+\.)?(djangoproject-gvn3.onrender\.com|webvisor\.com|metri[ck]a\.yandex\.(com|ru|by|com\.tr)|socpublic\.com)\/')
 
         # Получаем домен из заголовка Referer
         referer = request.META.get('HTTP_REFERER', '')
